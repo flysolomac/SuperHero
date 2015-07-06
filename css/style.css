@@ -1,0 +1,64 @@
+/*section, div {
+	border: 1px solid grey;
+}
+
+Below I listed the id tags for jquery
+
+#heroName{}
+#info{}
+#truename{}
+#power{}
+#enemy{}
+
+*/
+#heroImg{
+height: 300px;
+width:300px;
+}
+.title{
+   text-align: center;
+   font-size: 2em;}
+.label{
+   text-align: center;
+   font-size: 1.2em;}
+html{
+	background-image: url(../img/super.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	/*position: relative;*/
+    background-position: center;
+    background-color:black;
+}
+section {
+	max-width: 90%;
+	max-height: auto;
+	margin: auto;
+}
+.transbox {
+	margin: 10px;
+	background-color: black;
+	/*opacity: 0.8;*/
+    background-color: rgba(0,0,0,.85);
+}
+
+.transbox h1, h2, h3, h4, h5, h6, p{
+	margin: 20px;
+	font-weight: bold;
+	color: white;
+}
+.transbox h1 {
+	text-align: center;
+	font-size: 5em;
+}
+.profile {
+	
+}
+img {
+	display: block;
+	margin:auto;
+	border: 2px solid white;
+	border-radius: 1em;
+}
+/*  <p>
+	He is also an excellent tactician and strategist. Always thinking many steps ahead of his opponent. One would say that this is the reason he has been able to beat Superman, using his mind instead of his brawn to outwit the Man of Steel into his traps. Others might say that this can be seen as paranoia on Batman's part, like when he built a satellite system to spy on super humans to keep tabs on them or when he had his secret files with ways to take down the Justice League. 
+            </p> */
