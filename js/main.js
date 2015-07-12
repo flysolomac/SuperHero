@@ -33,7 +33,18 @@ $(document).ready(function()
     
     var captainAmerica = new SuperHero("img/captain.jpg","Captain America","Army enhanced super soldier.","Joe Simon","Super Soldier","Red Skull","Blue");
     
- var clicks = 0;
+    var chars= new Array();
+    chars.push(hulk,flash,superman,wolverine,captainAmerica);
+     
+for (var i=0;i<chars.length;i++)
+        {
+           
+setTimeout(function(x) { return function() { chars[x].changeHero(chars[x]); }; }(i), 4000*i);
+            
+        };
+});
+
+/* var clicks = 0;
 $("#click").click(function(){
     if(clicks == 0){
         hulk.changeHero(hulk);
@@ -52,9 +63,7 @@ $("#click").click(function(){
     }
     
     ++clicks;
-}); 
-
-});
+}); */
     
      
    /* var clicks = 0;
