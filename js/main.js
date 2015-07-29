@@ -25,9 +25,21 @@ $(document).ready(function()
         this.power= power;
         this.enemy= enemy;
         this.color=color;
-        console.log ("created super hero " + this.name);
-        
-    }; 
+        this.hasXrayVision = function (){
+          for (var j=0; j < this.power.length; j++)
+              {
+                  if ( this.power[j] == " Xray Vision")
+                  {
+                      console.log(this.power[j], true);
+                  }
+                  else
+                  { 
+                      console.log(this.power[j], false);
+                  }
+              }
+                 console.log ("created super hero " + this.name);
+              }
+     }; 
 
     // moved changeHero out of the SuperHero constructor. This function is not a method for a particular hero so we want it to be 
     // outside of that
@@ -41,27 +53,23 @@ $(document).ready(function()
         $("#power").text(hero.power);
         $("#enemy").text(hero.enemy);
         $("#heroName").css("color",hero.color);
+        hero.hasXrayVision();
     }
-
+    
     function changeHeroViewByIndex (index)
     {
         changeHero (superHeros [index]);
     }
     
+ 
+    
     var superHeros = new Array();
-            superHeros [Hulk] = new SuperHero("img/hulk.jpg","Hulk","Super strong genetically muatated army experiment.","Bruce Banner","Super      Strength","Military","Green");
-            superHeros [Flash] = new SuperHero("img/flash.jpg","Flash","Struck by lightning and inherited the ability of super speed.","Barry Allen","Super Speed","Fiddler","Red");
-            superHeros [Superman] = new SuperHero("img/superman.jpg","Superman","Alien Human from another planet.","Clark Kent","Super Human Abilities","Lex Lugor","Blue");
-            superHeros [Wolverine] = new SuperHero("img/wolverine.jpg","Wolverine","Genetic experiment infused with the world's strongest metal.","James (Logan) Howlet","Regeneration and Metal Claws","Magneto","Yellow");
-            superHeros [CaptainAmerica] = new SuperHero("img/captain.jpg","Captain America","Army enhanced super soldier.","Joe Simon","Super Soldier","Red Skull","Blue");
-
-    var superPowers= new Array();
-            superPowers [Hulk] = ["Super Strength","Can grow in size","Anger boost strength"];
-            superPowers [Flash] = ["Super Speed","Go through walls","Reverse time"];
-            superPowers [Superman] = ["Super Human Abilities","Xray Vision","Laser Beams"];
-            superPowers [Wolverine] = ["Regeneration","Metal Claws","Great Strength"];
-            superPowers [CaptainAmerica] = ["Super Soldier","Power Shield","Justice"];
-
+            superHeros [Hulk] = new SuperHero("img/hulk.jpg","Hulk","Super strong genetically muatated army experiment.","Bruce Banner",["Super Strength"," Can grow in size"," Anger boost strength"],"Military","Green");
+            superHeros [Flash] = new SuperHero("img/flash.jpg","Flash","Struck by lightning and inherited the ability of super speed.","Barry Allen",["Super Speed"," Go through walls"," Reverse time"],"Fiddler","Red");
+            superHeros [Superman] = new SuperHero("img/superman.jpg","Superman","Alien Human from another planet.","Clark Kent",["Super Human Abilities"," Xray Vision"," Laser Beams"],"Lex Lugor","Blue");
+            superHeros [Wolverine] = new SuperHero("img/wolverine.jpg","Wolverine","Genetic experiment infused with the world's strongest metal.","James (Logan) Howlet",["Regeneration"," Metal Claws"," Great Strength"],"Magneto","Yellow");
+            superHeros [CaptainAmerica] = new SuperHero("img/captain.jpg","Captain America","Army enhanced super soldier.","Joe Simon",["Super Soldier"," Power Shield"," Justice"],"Red Skull","Blue");
+           
     /*
     ** this function will iterate through each of the super heros in the array and will
     ** stop once all super heros in the array have been displayed
@@ -81,33 +89,7 @@ $(document).ready(function()
 
     };
     
-   function hasXrayVision()
-    {
-        for (var j=0; j < superPowers.length; j++)
-        {
-            for(var j = 0; j < superPowers[j].length; j++)  
-        {
-            if ("Xray Vision" == true)
-            {
-                console.log("I can see");
-            }
-            else
-            {
-                console.log("Not Found");
-            }
-        };
-        };
-  
-    }
-    
-    hasXrayVision();
 
     console.log ("exiting super hero JS now... ok");
    
 }); // end of file
-
-
-    
-    
-    
-    
