@@ -14,10 +14,11 @@ $(document).ready(function()
     var LastHero = CaptainAmerica;
 
     // time to wait before alternating hero view
-    var HeroChangeTimeoutMS = 2000;
+    var HeroChangeTimeoutMS = 3000;
     
     var SuperHero = function(img,name,about,truename,power,enemy,color)
     {
+        
         this.img = img;
         this.name= name;
         this.about= about;
@@ -25,20 +26,30 @@ $(document).ready(function()
         this.power= power;
         this.enemy= enemy;
         this.color=color;
+        // this method returns true if the hero has XRay Vision as one of its super powers; false otherwise
         this.hasXrayVision = function (){
-          for (var j=0; j < this.power.length; j++)
-              {
-                  if ( this.power[j] == " Xray Vision")
-                  {
-                      console.log(this.power[j], true);
-                  }
-                  else
-                  { 
-                      console.log(this.power[j], false);
-                  }
-              }
-                 console.log ("created super hero " + this.name);
-              }
+            numPowers = this.power.length;
+            var hasXrayVision = false;
+                for (var j=0; j < numPowers; j++)
+                      {
+                          if ( this.power[j] == " Xray Vision")
+                          {
+                             hasXrayVision = true;
+                          }
+                      }   
+                    
+                if (hasXrayVision === false)
+                            {
+                               $("#xray").css("color","red");
+                            }
+                        else
+                            {
+                               $("#xray").css("color","green");
+                            }
+
+                return hasXrayVision;
+                    
+               }  
      }; 
 
     // moved changeHero out of the SuperHero constructor. This function is not a method for a particular hero so we want it to be 
@@ -53,7 +64,9 @@ $(document).ready(function()
         $("#power").text(hero.power);
         $("#enemy").text(hero.enemy);
         $("#heroName").css("color",hero.color);
-        hero.hasXrayVision();
+        $("#xray").text(hero.hasXrayVision())
+        console.log ("created super hero " + hero.name);
+        
     }
     
     function changeHeroViewByIndex (index)
