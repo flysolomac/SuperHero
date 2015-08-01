@@ -30,31 +30,39 @@ $(document).ready(function()
         this.hasXrayVision = function (){
             numPowers = this.power.length;
             var hasXrayVision = false;
-                for (var j=0; j < numPowers; j++)
-                      {
-                          if ( this.power[j] == " Xray Vision")
-                          {
-                             hasXrayVision = true;
-                          }
-                      }   
-                    
-                if (hasXrayVision === false)
-                            {
-                               $("#xray").css("color","red");
-                            }
-                        else
-                            {
-                               $("#xray").css("color","green");
-                            }
-
+               for (var j=0; j < numPowers; j++)
+                {
+                    if ( this.power[j] == " Xray Vision")
+                    {
+                        hasXrayVision = true;
+                    }
+                }   
                 return hasXrayVision;
-                    
-               }  
-     }; 
+                console.log ("created super hero " + hero.name);
+            }
+    };
+    
+    
+    // Will Display Text Green If hero has XrayVision , Red otherwise
+    function xrayVisionID (hasXrayVision) {
+         
+        if (hasXrayVision === false)
+            {
+                $("#xray").text("False");
+                $("#xray").css("color","red");
+            }
+                else
+                {
+                    $("#xray").text("True");
+                    $("#xray").css("color","green");
+                }
+
+                
+            };
 
     // moved changeHero out of the SuperHero constructor. This function is not a method for a particular hero so we want it to be 
     // outside of that
-    function changeHero (hero)
+        function changeHero (hero)
     {
         console.log ("changing super hero view to " + hero.name);
         $("#heroImg").attr("src",hero.img);
@@ -64,9 +72,8 @@ $(document).ready(function()
         $("#power").text(hero.power);
         $("#enemy").text(hero.enemy);
         $("#heroName").css("color",hero.color);
-        $("#xray").text(hero.hasXrayVision())
-        console.log ("created super hero " + hero.name);
-        
+        xrayVisionID(hero.hasXrayVision())
+         
     }
     
     function changeHeroViewByIndex (index)
