@@ -11,7 +11,9 @@ Below I listed the id tags for jquery
 #enemy{}
 
 */
+@media (min-width: 600px) {
 
+}
 #heroImg{
 height: 300px;
 width:300px;
