@@ -11,6 +11,7 @@ Below I listed the id tags for jquery
 #enemy{}
 
 */
+
 #heroImg{
 height: 300px;
 width:300px;
@@ -21,6 +22,8 @@ width:300px;
 .label{
    text-align: center;
    font-size: 1.2em;}
+#xray{
+    font-size: 1.35em;}
 html{
 	background-image: url(../img/super.jpg);
 	background-repeat: no-repeat;
