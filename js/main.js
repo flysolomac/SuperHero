@@ -38,7 +38,6 @@ $(document).ready(function()
                     }
                 }   
                 return hasXrayVision;
-                console.log ("created super hero " + hero.name);
             }
     };
     
@@ -73,6 +72,7 @@ $(document).ready(function()
         $("#enemy").text(hero.enemy);
         $("#heroName").css("color",hero.color);
         xrayVisionID(hero.hasXrayVision())
+        console.log ("created super hero " + hero.name);
          
     }
     
